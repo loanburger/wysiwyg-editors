@@ -5,7 +5,6 @@ body {
 
 .App {
   align-content: center;
-  text-align: center;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -28,4 +27,14 @@ body {
 .preview {
   padding: 1rem;
   margin-top: 1rem;
+}
+
+.ql-toolbar {
+  background: #fff;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+.text-editor {
+  background: #fff;
 }

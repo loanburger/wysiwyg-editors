@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import { useState } from 'react';
-import { Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 
 import { EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
@@ -29,23 +29,26 @@ const DraftEditorComponent = () => {
   });
 
   return (
-    <>
+    <Paper sx={{ padding: 2 }}>
       <Typography variant="h5" gutterBottom>
         React-draft-wysiwyg based of Draft js
       </Typography>
-
       <Editor
+        placeholder="Enter text here"
         editorState={editorState}
         onEditorStateChange={handleEditorChange}
         wrapperClassName="wrapper-class"
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
       />
+      <Typography variant="h6" gutterBottom>
+        Preview:
+      </Typography>
       <div
         className="preview"
         dangerouslySetInnerHTML={createMarkup(convertedContent)}
       />
-    </>
+    </Paper>
   );
 };
 
