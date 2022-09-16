@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "prettier.configPath": ".prettierrc",
+    "files.eol": "\n",
+    "cSpell.words": ["ckeditor"]
+  }
+}
