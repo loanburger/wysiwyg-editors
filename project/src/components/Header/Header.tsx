@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
-  const title = ' Wysiwyg editor with custom toolbar';
+  const title = ' Wysiwyg editor options';
 
   return (
     <Box sx={{ flexGrow: 1 }} marginBottom={5}>

@@ -2145,6 +2145,21 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/dompurify@^2.3.4":
+  version "2.3.4"
+  resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/@types/dompurify/-/dompurify-2.3.4.tgz#94e997e30338ea24d4c8d08beca91ce4dd17a1b4"
+  integrity sha512-EXzDatIb5EspL2eb/xPGmaC8pePcTHrkDCONjeisusLFrVfl38Pjea/R0YJGu3k9ZQadSvMqW0WXPI2hEo2Ajg==
+  dependencies:
+    "@types/trusted-types" "*"
+
+"@types/draft-convert@^2.1.4":
+  version "2.1.4"
+  resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/@types/draft-convert/-/draft-convert-2.1.4.tgz#8f32f86133eca5ddfede46d31a40ba6c964f605f"
+  integrity sha512-NbhE0ijzENK6ZQa3zO0KK6cNS80XESnQ03Bg7DEzE/qBg6YvpIEni6vzruYCYPkm1Sc6z0K7XbtJu4p53elGdA==
+  dependencies:
+    "@types/draft-js" "*"
+    "@types/react" "*"
+
 "@types/draft-js@*", "@types/draft-js@^0.11.9":
   version "0.11.9"
   resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/@types/draft-js/-/draft-js-0.11.9.tgz#b7535fb2511e8b8c8e33ffac2199a5f2988f4fd5"
@@ -2408,6 +2423,11 @@
   integrity sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==
   dependencies:
     "@types/jest" "*"
+
+"@types/trusted-types@*":
+  version "2.0.2"
+  resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/@types/trusted-types/-/trusted-types-2.0.2.tgz#fc25ad9943bcac11cceb8168db4f275e0e72e756"
+  integrity sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==
 
 "@types/uglify-js@*":
   version "3.17.0"
@@ -4946,6 +4966,11 @@ domhandler@^4.0.0, domhandler@^4.2.0, domhandler@^4.3.1:
   dependencies:
     domelementtype "^2.2.0"
 
+dompurify@^2.4.0:
+  version "2.4.0"
+  resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/dompurify/-/dompurify-2.4.0.tgz#c9c88390f024c2823332615c9e20a453cf3825dd"
+  integrity sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA==
+
 domutils@^1.7.0:
   version "1.7.0"
   resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/domutils/-/domutils-1.7.0.tgz#56ea341e834e06e6748af7a1cb25da67ea9f8c2a"
@@ -4987,6 +5012,15 @@ dotenv@8.2.0:
   version "8.2.0"
   resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
+draft-convert@^2.1.13:
+  version "2.1.13"
+  resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/draft-convert/-/draft-convert-2.1.13.tgz#ffa1878feee88e0911c5728cd1445f6e5d861a41"
+  integrity sha512-/h/n4JCfyO8aWby7wKBkccHdsuVbbDyHWXi/B3Zf2pN++lN1lDOIVt5ulXCcbH2Y5YJEFzMJw/YGfN+R0axxxg==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    immutable "~3.7.4"
+    invariant "^2.2.1"
 
 draft-js@^0.11.7:
   version "0.11.7"
@@ -6791,6 +6825,13 @@ internal-slot@^1.0.3:
     get-intrinsic "^1.1.0"
     has "^1.0.3"
     side-channel "^1.0.4"
+
+invariant@^2.2.1:
+  version "2.2.4"
+  resolved "https://artifactory.xero-support.com/artifactory/api/npm/npm/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
+  integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
+  dependencies:
+    loose-envify "^1.0.0"
 
 ip-regex@^2.1.0:
   version "2.1.0"

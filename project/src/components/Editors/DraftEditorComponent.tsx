@@ -1,64 +1,49 @@
+/* eslint-disable react/no-danger */
 import { useState } from 'react';
-import { Editor, EditorState, RichUtils } from 'draft-js';
-import { IconButton, Stack } from '@mui/material';
-import FormatBoldIcon from '@mui/icons-material/FormatBold';
-import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
-import FormatItalicIcon from '@mui/icons-material/FormatItalic';
+import { Typography } from '@mui/material';
 
-import 'draft-js/dist/Draft.css';
-
-type FormatCommand = 'BOLD' | 'ITALIC' | 'UNDERLINE';
+import { EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import { convertToHTML } from 'draft-convert';
+import DOMPurify from 'dompurify';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const DraftEditorComponent = () => {
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty(),
   );
+  const [convertedContent, setConvertedContent] = useState<string>('');
 
-  const onChange = (state: EditorState) => {
+  const convertContentToHTML = () => {
+    const currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+    setConvertedContent(currentContentAsHTML);
+  };
+
+  const handleEditorChange = (state: EditorState) => {
     setEditorState(state);
+    convertContentToHTML();
   };
 
-  const handleKeyCommand = (command: string, state: EditorState) => {
-    const newState = RichUtils.handleKeyCommand(state, command);
-    if (newState) {
-      onChange(newState);
-      return 'handled';
-    }
-    return 'not-handled';
-  };
-
-  const onBoldClick = (command: FormatCommand) => {
-    console.log(`${command} clicked`);
-    onChange(RichUtils.toggleInlineStyle(editorState, command));
-  };
+  const createMarkup = (html: string) => ({
+    __html: DOMPurify.sanitize(html),
+  });
 
   return (
     <>
-      <Stack direction="row" spacing={1}>
-        <IconButton
-          aria-label="Format bold"
-          onClick={() => onBoldClick('BOLD')}
-        >
-          <FormatBoldIcon />
-        </IconButton>
-        <IconButton
-          aria-label="Format italic"
-          onClick={() => onBoldClick('ITALIC')}
-        >
-          <FormatItalicIcon />
-        </IconButton>
-        <IconButton
-          aria-label="Format underline"
-          onClick={() => onBoldClick('UNDERLINE')}
-        >
-          <FormatUnderlinedIcon />
-        </IconButton>
-      </Stack>
+      <Typography variant="h5" gutterBottom>
+        React-draft-wysiwyg based of Draft js
+      </Typography>
 
       <Editor
         editorState={editorState}
-        handleKeyCommand={handleKeyCommand}
-        onChange={setEditorState}
+        onEditorStateChange={handleEditorChange}
+        wrapperClassName="wrapper-class"
+        editorClassName="editor-class"
+        toolbarClassName="toolbar-class"
+      />
+      <div
+        className="preview"
+        dangerouslySetInnerHTML={createMarkup(convertedContent)}
       />
     </>
   );
